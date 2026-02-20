@@ -21,6 +21,16 @@ export default function BasicsPage() {
             </div>
 			))}
         */}
+        
+          {team.map((team) => (
+            <div key={team.id} className={styles.card}>
+            <img src={team.image} alt={team.name} className={styles.pokemonImage}/>
+            <h3>{team.name}</h3>
+            <p>Type: {team.type}</p>
+            </div>
+          ))
+          }
+
       </div>
 
       <div className={styles.buttonGroup}>

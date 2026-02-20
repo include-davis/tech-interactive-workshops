@@ -3,12 +3,14 @@
 import "./ColorButton.scss";
 
 // ✏️ Step 4: Add props here → it should receive { color, onPick } from the parent.
-export default function ColorButton() {
+export default function ColorButton({ color, onPick }) {
   return (
-    // ✏️ Step 5: Add a <button> with:
-    // - className="color-btn"
-    // - style={{ backgroundColor: color }}
-    // - onClick={() => onPick(color)}
-    <button className="color-btn">Color</button>
+    <button
+      className="color-btn"
+      // Set the button's color
+      style={{ backgroundColor: color }} 
+      // Call the parent's function with this color when clicked
+      onClick={() => onPick(color)} 
+    ></button>
   );
 }

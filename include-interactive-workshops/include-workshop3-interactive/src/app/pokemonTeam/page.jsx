@@ -6,6 +6,10 @@ export default function PokemonPage() {
   // *Insert team type filter here!*
   // const *Insert pokemon type variable!* = *Insert .filter function here!* => pokemon.type === ["*Insert type here*"]
 
+
+  const fireTeam = team.filter((pokemon) => pokemon.type === "Fire");
+
+
   return (
     <main className={styles.container}>
       <h1>Pokémon Team</h1>
@@ -14,36 +18,32 @@ export default function PokemonPage() {
         <h2>.Map Method</h2>
         <h3> Insert Map Function Here!</h3>
         <div className={styles.pokemonCards}>
-          {/*Insert .map function here!*/}
-
-          {/* Example skeleton:
-          {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
-              <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
-              <h3>{ *item.name* }</h3>
-              <p>Category: { *item.category* }</p>
+          {team.map((team) => (
+            <div key={team.id} className={styles.card}>
+            <img src={team.image} alt={team.name} className={styles.pokemonImage}/>
+            <h3>{team.name}</h3>
+            <p>Type: {team.type}</p>
             </div>
-			))}
-        */}
+          ))
+          }
         </div>
+        
       </section>
 
       <section className={styles.section}>
         <h2>.Filter Method</h2>
-        <h3> Insert Filter Function Here!</h3>
+        <h3> Fire Pokemon</h3>
 
         <div className={styles.pokemonCards}>
-          {/*Insert .map function here!*/}
-
-          {/* Example skeleton:
-          {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
-              <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
-              <h3>{ *item.name* }</h3>
-              <p>Category: { *item.category* }</p>
+          {/* Insert .map function here! */}
+          {fireTeam.map((team) => (
+            <div key={team.id} className={styles.card}>
+            <img src={team.image} alt={team.name} className={styles.pokemonImage}/>
+            <h3>{team.name}</h3>
+            <p>Type: {team.type}</p>
             </div>
-			))}
-        */}
+          ))
+          }
         </div>
       </section>
 
